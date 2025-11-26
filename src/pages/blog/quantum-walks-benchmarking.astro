@@ -1,0 +1,169 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+<Layout title="Quantum Walks: Benchmarking Quantum Computers | Julio Cesar">
+  <main>
+    <a href="/blog" class="back">← Back to blog</a>
+    <article>
+      <span class="date">2025-11-25</span>
+      <h1>Quantum Walks: A Tool for Benchmarking Quantum Computers</h1>
+      <div class="tags">
+        <span>#Quantum Computing</span>
+        <span>#Physics</span>
+        <span>#IBM Quantum</span>
+      </div>
+      
+      <div class="content">
+        <p>
+          As part of my undergraduate thesis, I've been exploring how quantum walks 
+          can be used to benchmark real quantum hardware. In this post, I'll explain 
+          what quantum walks are and why they're useful for evaluating quantum computers.
+        </p>
+
+        <h2>What is a Quantum Walk?</h2>
+        <p>
+          A quantum walk is the quantum mechanical analog of a classical random walk. 
+          While a classical random walk involves a particle moving randomly left or right 
+          with equal probability, a quantum walk exploits superposition and interference 
+          to spread across multiple positions simultaneously.
+        </p>
+        <p>
+          This fundamental difference leads to a quadratically faster spreading compared 
+          to classical walks — a property known as <strong>quantum speedup</strong>.
+        </p>
+
+        <h2>Why Use Quantum Walks for Benchmarking?</h2>
+        <p>
+          Quantum walks are excellent benchmarks because they are sensitive to errors 
+          in quantum hardware. The interference patterns that emerge depend critically 
+          on the coherence and gate fidelity of the quantum processor. Any noise or 
+          decoherence will distort the expected probability distribution.
+        </p>
+        <p>
+          This makes them ideal for comparing different quantum computers — in my case, 
+          IBM's <code>ibm_brisbane</code>, <code>ibm_kyoto</code>, and <code>ibm_sherbrooke</code>.
+        </p>
+
+        <h2>Types of Quantum Walks</h2>
+        <p>
+          There are two main types of quantum walks:
+        </p>
+        <p>
+          <strong>Discrete-time quantum walks</strong> use a "coin" operator (typically a Hadamard gate) 
+          to determine the direction of movement, followed by a conditional shift operator. 
+          This is analogous to flipping a coin in a classical random walk.
+        </p>
+        <p>
+          <strong>Continuous-time quantum walks</strong> evolve according to a Hamiltonian, 
+          typically derived from the adjacency matrix of a graph. The evolution is 
+          implemented using Trotter decomposition on real hardware.
+        </p>
+
+        <h2>Key Metrics for Benchmarking</h2>
+        <p>
+          In my thesis, I track several metrics to evaluate quantum computer performance:
+        </p>
+        <p>
+          <strong>Spread variance</strong> measures how far the quantum walker spreads from 
+          its initial position. Higher variance indicates better quantum behavior.
+        </p>
+        <p>
+          <strong>Position entropy</strong> quantifies the uniformity of the probability 
+          distribution across positions.
+        </p>
+        <p>
+          <strong>Quantum advantage</strong> compares the quantum walk's spreading to what 
+          a classical random walk would achieve.
+        </p>
+
+        <h2>Optimizing for Real Hardware</h2>
+        <p>
+          Real quantum computers have constraints — limited connectivity between qubits, 
+          varying error rates, and specific topologies. Part of my work involves optimizing 
+          quantum walk circuits for specific IBM hardware using techniques like:
+        </p>
+        <p>
+          <strong>Topology-aware transpilation</strong> maps logical qubits to physical 
+          qubits in a way that minimizes the need for SWAP gates.
+        </p>
+        <p>
+          <strong>Circuit depth minimization</strong> reduces the number of sequential 
+          operations, decreasing exposure to decoherence.
+        </p>
+        <p>
+          <strong>Error mitigation</strong> applies post-processing techniques to 
+          reduce the impact of noise on results.
+        </p>
+
+        <h2>What's Next?</h2>
+        <p>
+          In upcoming posts, I'll share specific results from running quantum walks 
+          on IBM hardware, including comparisons between different processors and 
+          analysis of how circuit optimization affects benchmark results.
+        </p>
+        <p>
+          If you're interested in quantum computing or have questions about quantum walks, 
+          feel free to reach out!
+        </p>
+      </div>
+    </article>
+  </main>
+</Layout>
+<style>
+  main {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+  .back {
+    color: #bc52ee;
+    text-decoration: none;
+    font-size: 0.9rem;
+  }
+  .back:hover {
+    text-decoration: underline;
+  }
+  article {
+    margin-top: 2rem;
+  }
+  .date {
+    font-size: 0.85rem;
+    color: #9ca3af;
+  }
+  h1 {
+    font-size: 2rem;
+    color: #111827;
+    margin: 0.5rem 0 1rem;
+  }
+  .tags {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+  }
+  .tags span {
+    font-size: 0.85rem;
+    color: #bc52ee;
+  }
+  .content p {
+    color: #4b5563;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+  }
+  .content h2 {
+    color: #111827;
+    font-size: 1.4rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+  .content code {
+    background: linear-gradient(66.77deg, #f3cddd 0%, #f5cee7 100%);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: 'Cascadia Code', 'Source Code Pro', monospace;
+    font-size: 0.95rem;
+  }
+  .content strong {
+    color: #111827;
+  }
+</style>

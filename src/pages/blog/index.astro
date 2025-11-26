@@ -1,0 +1,86 @@
+---
+import Layout from '../../layouts/Layout.astro';
+const posts = [
+  {
+    slug: 'quantum-walks-benchmarking',
+    title: 'Quantum Walks: A Tool for Benchmarking Quantum Computers',
+    description: 'How quantum walks can be used to evaluate and compare real quantum hardware performance.',
+    date: '2025-01-20',
+    tags: ['Quantum Computing', 'Physics', 'IBM Quantum']
+  },
+  {
+    slug: 'primer_post',
+    title: 'My first post',
+    description: 'An introduction to my blog and what I will be sharing here.',
+    date: '2025-01-15',
+    tags: ['Data Engineering', 'Personal']
+  },
+];
+---
+<Layout title="Blog | Julio Cesar">
+  <main>
+    <h1>Blog</h1>
+    <div class="post-list">
+      {posts.map(post => (
+        <a href={`/blog/${post.slug}`} class="post-card">
+          <span class="date">{post.date}</span>
+          <h3>{post.title}</h3>
+          <div class="tags">
+            {post.tags.map(tag => <span>#{tag}</span>)}
+          </div>
+          <p>{post.description}</p>
+        </a>
+      ))}
+    </div>
+  </main>
+</Layout>
+<style>
+  main {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+  h1 {
+    font-size: 2rem;
+    color: #111827;
+    margin-bottom: 2rem;
+  }
+  .post-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .post-card {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    padding: 1.5rem;
+    border-radius: 16px;
+    border: 1px solid white;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+  .post-card:hover {
+    background: rgba(255, 255, 255, 1);
+  }
+  .date {
+    font-size: 0.85rem;
+    color: #9ca3af;
+  }
+  .post-card h3 {
+    margin: 0.5rem 0;
+    color: #111827;
+  }
+  .tags {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+  .tags span {
+    font-size: 0.8rem;
+    color: #bc52ee;
+  }
+  .post-card p {
+    margin: 0;
+    color: #4b5563;
+  }
+</style>

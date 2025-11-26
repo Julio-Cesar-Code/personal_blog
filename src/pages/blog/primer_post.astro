@@ -1,0 +1,80 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+<Layout title="My first post | Julio Cesar">
+  <main>
+    <a href="/blog" class="back">← Back to blog</a>
+    <article>
+      <span class="date">2025-11-15</span>
+      <h1>My first post</h1>
+      <div class="tags">
+        <span>#Data Engineering</span>
+        <span>#Personal</span>
+      </div>
+      
+      <div class="content">
+        <p>
+          Welcome to my blog! Here I'll share my experiences as a Data Engineer,
+          tutorials about PySpark, dbt, and everything related to the data world.
+        </p>
+        <h2>What will you find here?</h2>
+        <p>
+          I'll write about pipeline optimization, best practices in Databricks,
+          and solutions to common problems I encounter in my day-to-day work.
+        </p>
+        <p>
+          I'll also explore topics at the intersection of my physics background
+          and data — including quantum computing and its potential applications
+          in machine learning and optimization.
+        </p>
+      </div>
+    </article>
+  </main>
+</Layout>
+<style>
+  main {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+  .back {
+    color: #bc52ee;
+    text-decoration: none;
+    font-size: 0.9rem;
+  }
+  .back:hover {
+    text-decoration: underline;
+  }
+  article {
+    margin-top: 2rem;
+  }
+  .date {
+    font-size: 0.85rem;
+    color: #9ca3af;
+  }
+  h1 {
+    font-size: 2rem;
+    color: #111827;
+    margin: 0.5rem 0 1rem;
+  }
+  .tags {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+  }
+  .tags span {
+    font-size: 0.85rem;
+    color: #bc52ee;
+  }
+  .content p {
+    color: #4b5563;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+  }
+  .content h2 {
+    color: #111827;
+    font-size: 1.4rem;
+    margin-top: 2rem;
+  }
+</style>

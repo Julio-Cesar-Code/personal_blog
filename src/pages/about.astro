@@ -1,0 +1,88 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+<Layout title="About | Julio Cesar">
+  <main>
+    <h1>About me</h1>
+    <div class="content">
+      <p>
+        I'm a Data Engineer at an insurance company in Panama, where I work with 
+        large-scale data processing using Databricks, PySpark, dbt, and MLflow.
+      </p>
+      <p>
+        I handle datasets of over 15 terabytes and more than a billion records, 
+        focusing on insurance analytics, premium calculations, and machine learning 
+        model development.
+      </p>
+      <p>
+        I have a background in Physics and experience in full-stack development and teaching.
+      </p>
+      
+      <h2>Research Interests</h2>
+      <p>
+        With my physics background, I'm deeply interested in exploring the intersection 
+        of Quantum Computing and Artificial Intelligence. I'm fascinated by how quantum 
+        algorithms could revolutionize machine learning and optimization problems — 
+        areas where I already work daily with classical approaches.
+      </p>
+
+      <h2>Technologies</h2>
+      <div class="tags">
+        <span>Databricks</span>
+        <span>PySpark</span>
+        <span>dbt</span>
+        <span>MLflow</span>
+        <span>Python</span>
+        <span>SQL</span>
+        <span>Delta Lake</span>
+      </div>
+
+      <h2>Interests</h2>
+      <div class="tags interests">
+        <span>Quantum Computing</span>
+        <span>Artificial Intelligence</span>
+        <span>Machine Learning</span>
+        <span>Data Architecture</span>
+      </div>
+    </div>
+  </main>
+</Layout>
+<style>
+  main {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+  h1 {
+    font-size: 2rem;
+    color: #111827;
+    margin-bottom: 2rem;
+  }
+  h2 {
+    font-size: 1.3rem;
+    color: #111827;
+    margin-top: 2rem;
+  }
+  p {
+    color: #4b5563;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 1rem;
+  }
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+  }
+  .tags span {
+    background: linear-gradient(83.21deg, #3245ff 0%, #bc52ee 100%);
+    color: white;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+  }
+  .tags.interests span {
+    background: linear-gradient(14deg, #d83333 0%, #f041ff 100%);
+  }
+</style>
